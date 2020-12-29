@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import phones from './phones'  // our phone reducer
+import ingredients from './ingredients'  // our ingredient reducer
 export default combineReducers({
-    phones,
+    ingredients,
 })

@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import '../index.css'
-import { _getPhones } from '../utils/_DATA'
-import { receivePhones } from '../actions/Phones'
-import Container from './container'
 import 'semantic-ui-css/semantic.min.css'
+
+import '../index.css'
+import { _getIngredients } from '../utils/_DATA'
+import { receiveIngredients } from '../actions/ingredients'
+import Container from './container.js'
+
 
 class App extends Component {
   componentDidMount(){
-    _getPhones()
-      .then((phones) =>{
-        this.props.dispatch(receivePhones(phones))
+    _getIngredients()
+      .then((ingredients) =>{
+        this.props.dispatch(receiveIngredients(ingredients))
       })
   }
   render(){
-    const { phones } = this.props
-  
+ 
     return (
-      <Container phones={phones} />
+      <Container />
     );
   }
 }
 
-function mapStateToProps({phones}){
-  return{
-    phones
-  }
-}
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);

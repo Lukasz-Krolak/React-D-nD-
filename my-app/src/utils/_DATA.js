@@ -1,38 +1,38 @@
-let phones = {
+let ingredients = {
     Techno:{
         brand: "Techno",
-        inCart: 'false' // or "in"
+        inRecipe: 'false' // or "in"
     },
     Apple:{
         brand: "Iphone",
-        inCart: "false"
+        inRecipe: "false"
     },
     Samsung:{
         brand: "Samsung",
-        inCart: "false" 
+        inRecipe: "false" 
     },
     Hauwei:{
         brand: "Hauwei",
-        inCart: "true"
+        inRecipe: "true"
     },
     HTC:{
         brand: "HTC",
-        inCart: "true"
+        inRecipe: "true"
     }
 }
-export function _getPhones (){
+export function _getIngredients (){
     return new Promise((res, rej) =>{
-        setTimeout(() => res({...phones}), 1000);
+        setTimeout(() => res({...ingredients}), 1000);
     });
 }
-export function setInCart({id, inCart}){
+export function setInRecipe({id, inRecipe}){
     return new Promise((res, rej) =>{
         setTimeout(() =>{
-            phones = {
-                ...phones,
+            ingredients = {
+                ...ingredients,
                 [id]:{
-                    ...phones[id],
-                    inCart: inCart
+                    ...ingredients[id],
+                    inRecipe: inRecipe
                 }
             }
             res()
